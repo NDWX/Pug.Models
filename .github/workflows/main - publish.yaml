@@ -34,9 +34,6 @@ jobs:
       - name: Pack Core project
         run: dotnet pack --output ${{env.PackagesBaseFolder}} --nologo --configuration ${{env.BuildConfiguration}} ${{env.CoreProject}}
 
-      - name: Publish Core NuGet package
-        run: dotnet nuget push ${{env.PackagesBaseFolder}}/*.nupkg --skip-duplicate
-
       - name: Publish Core NuGet package to NuGet.org
         run: dotnet nuget push ${{env.PackagesBaseFolder}}/*.nupkg --api-key ${{secrets.NUGET_APIKEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
 
