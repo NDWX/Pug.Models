@@ -1,10 +1,8 @@
-using Pug.Effable;
+﻿namespace Pug.Models;
 
-namespace Pug.Models;
-
-public record Locality : InMunicipality
+public class Street : InLocality
 {
-	public string Name
+	public string Country 
 	{
 		get;
 #if NETSTANDARD2_0
@@ -13,17 +11,7 @@ public record Locality : InMunicipality
 			init;
 #endif
 	}
-
-	public string Municipality
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-			init;
-#endif
-	}
-		
+	
 	public string Territory
 	{
 		get;
@@ -33,8 +21,28 @@ public record Locality : InMunicipality
 			init;
 #endif
 	}
-		
-	public string Country
+	
+	public string Municipality
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+			init;
+#endif
+	}
+	
+	public string Locality
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+			init;
+#endif
+	}
+
+	public StreetName StreetName
 	{
 		get;
 #if NETSTANDARD2_0
