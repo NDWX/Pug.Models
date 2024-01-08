@@ -2,16 +2,56 @@ using Pug.Effable;
 
 namespace Pug.Models
 {
-	public class Locality : INamed<string>, InMunicipality
+	public record Locality : InMunicipality
 	{
-		public string Name { get; set; }
+		public string Name
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 		
-		public string PostalCode { get; set; }
+		public string PostalCode 
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
+
+		public string Municipality
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 		
-		public string Municipality { get; set; }
+		public string Territory
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 		
-		public string Territory { get; set; }
-		
-		public string Country { get; set; }
+		public string Country
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 	}
 }

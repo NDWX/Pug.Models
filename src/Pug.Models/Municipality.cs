@@ -2,13 +2,37 @@ using Pug.Effable;
 
 namespace Pug.Models
 {
-	public class Municipality : INamed<string>, InTerritory
+	public record Municipality : InTerritory
 	{
-		public string Name { get; set; }
+		public string Name 
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 		
-		public string Territory { get; set; }
+		public string Territory
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 		
-		public string Country { get; set; }
+		public string Country
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 
 		public static implicit operator Municipality( Locality locality ) => new Municipality()
 		{

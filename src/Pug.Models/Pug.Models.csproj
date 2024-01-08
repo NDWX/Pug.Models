@@ -3,7 +3,6 @@
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
         <LangVersion>10</LangVersion>
         <Title>Pug.Models</Title>
         <Authors>Andrian</Authors>
@@ -19,6 +18,10 @@
         <RepositoryUrl>https://github.com/NDWX/Pug.Models</RepositoryUrl>
         <PackageReleaseNotes>
         </PackageReleaseNotes>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+<!--        <Nullable>enable</Nullable>-->
     </PropertyGroup>
 
     <ItemGroup>

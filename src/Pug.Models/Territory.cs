@@ -4,11 +4,27 @@ using static System.String;
 
 namespace Pug.Models
 {
-	public class Territory : INamed<string>, InCountry
+	public record Territory : InCountry
 	{
-		public string Name { get; set; }
+		public string Name
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 		
-		public string Country { get; set; }
+		public string Country
+		{
+			get;
+#if NETSTANDARD2_0
+			set;
+#else
+			init;
+#endif
+		}
 
 		public static implicit operator Territory( Municipality municipality ) => new Territory()
 		{
