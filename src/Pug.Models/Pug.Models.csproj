@@ -8,16 +8,16 @@
         <Authors>Andrian</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageTags>Pug Models Types Library</PackageTags>
-        <Version>0.0.3</Version>
-        <FileVersion>0.0.3</FileVersion>
-        <AssemblyVersion>0.0.3</AssemblyVersion>
-        <PackageVersion>0.0.3</PackageVersion>
+        <Version>0.0.4</Version>
+        <FileVersion>0.0.4</FileVersion>
+        <AssemblyVersion>0.0.4</AssemblyVersion>
+        <PackageVersion>0.0.4</PackageVersion>
         <PackageLicenseExpression>APL-1.0</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/NDWX/Pug.Models</RepositoryUrl>
         <PackageReleaseNotes>
-            Street address support
+            Upgraded Pug.Effable to version 3.0 and new Dwelling type.
         </PackageReleaseNotes>
     </PropertyGroup>
     
@@ -26,7 +26,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Pug.Effable" Version="2.0.3" />
+      <PackageReference Include="Pug.Effable" Version="3.0.0" />
     </ItemGroup>
 
 </Project>
