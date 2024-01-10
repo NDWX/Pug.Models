@@ -1,32 +1,7 @@
 ﻿namespace Pug.Models;
 
-public sealed class StreetName : IEquatable<StreetName>
+public sealed class StreetName : PlaceName, IEquatable<StreetName>
 {
-	/// <summary>
-	/// The generic of street name
-	/// </summary>
-	public string Type
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-			init;
-#endif
-	}
-
-	/// <summary>
-	/// The specific of street name
-	/// </summary>
-	public string Name
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-			init;
-#endif
-	}
 
 	public bool Equals( StreetName other )
 	{
@@ -58,4 +33,5 @@ public sealed class StreetName : IEquatable<StreetName>
 	{
 		return !Equals( left, right );
 	}
+	
 }

@@ -4,7 +4,7 @@ using static System.String;
 
 namespace Pug.Models;
 
-public record Territory : InCountry
+public record Territory : INamed, InCountry
 {
 	public string Name
 	{

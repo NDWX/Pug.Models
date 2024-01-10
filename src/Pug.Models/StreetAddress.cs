@@ -51,6 +51,16 @@ public class StreetAddress : IOnStreet
 			init;
 #endif
 	}
+	
+	public PlaceName Place
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+			init;
+#endif
+	}
 
 	public string StreetNumber
 	{
