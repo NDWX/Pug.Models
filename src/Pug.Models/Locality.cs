@@ -2,7 +2,7 @@ using Pug.Effable;
 
 namespace Pug.Models;
 
-public record Locality : InMunicipality
+public record Locality : INamed, InMunicipality
 {
 	public string Name
 	{
