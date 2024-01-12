@@ -8,16 +8,16 @@
         <Authors>Andrian</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageTags>Pug Models Types Library</PackageTags>
-        <Version>0.0.5</Version>
-        <FileVersion>0.0.5</FileVersion>
-        <AssemblyVersion>0.0.5</AssemblyVersion>
-        <PackageVersion>0.0.5</PackageVersion>
+        <Version>0.0.6</Version>
+        <FileVersion>0.0.6</FileVersion>
+        <AssemblyVersion>0.0.6</AssemblyVersion>
+        <PackageVersion>0.0.6</PackageVersion>
         <PackageLicenseExpression>APL-1.0</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/NDWX/Pug.Models</RepositoryUrl>
         <PackageReleaseNotes>
-            Minor enhancements
+            Postal code support.
         </PackageReleaseNotes>
     </PropertyGroup>
     
