@@ -1,6 +1,6 @@
 ﻿namespace Pug.Models;
 
-public interface IAtStreetAddress : IOnStreet
+public interface IAtStreetAddress<TPostalCode> : IOnStreet<TPostalCode>
 {
 	string StreetNumber
 	{
@@ -11,4 +11,16 @@ public interface IAtStreetAddress : IOnStreet
 			init;
 #endif
 	}
+	
+	public PlaceName Place
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+			init;
+#endif
+	}
 }
+
+public interface IAtStreetAddress : IAtStreetAddress<string>, IOnStreet {}

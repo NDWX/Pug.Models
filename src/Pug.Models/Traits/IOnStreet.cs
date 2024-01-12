@@ -1,8 +1,8 @@
 ﻿namespace Pug.Models;
 
-public interface IOnStreet : InLocality
+public interface IOnStreet<TPostalCode> : InLocality<TPostalCode>
 {
-	StreetName StreetName
+	PlaceName StreetName
 	{
 		get;
 #if NETSTANDARD2_0
@@ -11,4 +11,8 @@ public interface IOnStreet : InLocality
 			init;
 #endif
 	}
+}
+
+public interface IOnStreet : IOnStreet<string>, InLocality
+{
 }

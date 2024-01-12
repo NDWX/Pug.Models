@@ -1,6 +1,6 @@
 namespace Pug.Models;
 
-public interface InMunicipality : InTerritory
+public interface InMunicipality<TPostalCode> : InTerritory<TPostalCode>
 {
 	string Municipality
 	{
@@ -8,7 +8,9 @@ public interface InMunicipality : InTerritory
 #if NETSTANDARD2_0
 		set;
 #else
-			init;
+		init;
 #endif
 	}
 }
+
+public interface InMunicipality : InMunicipality<string>, InTerritory {}

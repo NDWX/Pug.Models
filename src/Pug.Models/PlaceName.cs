@@ -2,7 +2,7 @@ using Pug.Effable;
 
 namespace Pug.Models;
 
-public class PlaceName : INamed
+public record PlaceName : INamed
 {
 	/// <summary>
 	/// The generic of street name
@@ -30,7 +30,7 @@ public class PlaceName : INamed
 #endif
 	}
 
-	public static bool Equals( StreetName x, StreetName y )
+	public static bool Equals( PlaceName x, PlaceName y )
 	{
 		if( ReferenceEquals( x, y ) ) return true;
 		if( ReferenceEquals( x, null ) ) return false;
@@ -39,7 +39,7 @@ public class PlaceName : INamed
 		return x.Type == y.Type && x.Name == y.Name;
 	}
 
-	public static int GetHashCode( StreetName obj )
+	public static int GetHashCode( PlaceName obj )
 	{
 		unchecked
 		{
