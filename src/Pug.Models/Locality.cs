@@ -2,19 +2,9 @@ using Pug.Effable;
 
 namespace Pug.Models;
 
-public record Locality : INamed, InMunicipality
+public record Locality<TPostalCode> : INamed, InMunicipality<TPostalCode>
 {
-	public string Name
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-			init;
-#endif
-	}
-
-	public string Municipality
+	public string Country
 	{
 		get;
 #if NETSTANDARD2_0
@@ -33,8 +23,8 @@ public record Locality : INamed, InMunicipality
 			init;
 #endif
 	}
-		
-	public string Country
+
+	public string Municipality
 	{
 		get;
 #if NETSTANDARD2_0
@@ -43,4 +33,35 @@ public record Locality : INamed, InMunicipality
 			init;
 #endif
 	}
+	
+	public TPostalCode PostalCode
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+		init;
+#endif
+	}
+
+	public string Name
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+			init;
+#endif
+	}
+	
+	public static implicit operator Locality<TPostalCode>( Street<TPostalCode> street ) => new ()
+	{
+		Name = street.Locality,
+		PostalCode = street.PostalCode,
+		Municipality = street.Municipality,
+		Territory = street.Territory,
+		Country = street.Country
+	};
 }
+
+public record Locality : Locality<string>, InMunicipality {}

@@ -2,7 +2,7 @@ using Pug.Effable;
 
 namespace Pug.Models;
 
-public record Dwelling : IAtStreetAddress
+public record Dwelling<TPostalCode> : IAtStreetAddress<TPostalCode>
 {
 	public string Country
 	{
@@ -34,6 +34,16 @@ public record Dwelling : IAtStreetAddress
 #endif
 	}
 	
+	public TPostalCode PostalCode
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+		init;
+#endif
+	}
+	
 	public string Locality
 	{
 		get;
@@ -44,7 +54,7 @@ public record Dwelling : IAtStreetAddress
 #endif
 	}
 	
-	public StreetName StreetName
+	public PlaceName StreetName
 	{
 		get;
 #if NETSTANDARD2_0
@@ -55,6 +65,16 @@ public record Dwelling : IAtStreetAddress
 	}
 	
 	public string StreetNumber
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+			init;
+#endif
+	}
+	
+	public PlaceName Place
 	{
 		get;
 #if NETSTANDARD2_0
@@ -104,3 +124,5 @@ public record Dwelling : IAtStreetAddress
 #endif
 	}
 }
+
+public record Dwelling : Dwelling<string>, IAtStreetAddress {}

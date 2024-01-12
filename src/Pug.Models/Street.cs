@@ -1,6 +1,6 @@
 ﻿namespace Pug.Models;
 
-public class Street : InLocality
+public record Street<TPostalCode> : InLocality<TPostalCode>
 {
 	public string Country 
 	{
@@ -8,7 +8,7 @@ public class Street : InLocality
 #if NETSTANDARD2_0
 		set;
 #else
-			init;
+		init;
 #endif
 	}
 	
@@ -16,9 +16,9 @@ public class Street : InLocality
 	{
 		get;
 #if NETSTANDARD2_0
-		set;
+		set; 
 #else
-			init;
+		init;
 #endif
 	}
 	
@@ -28,7 +28,17 @@ public class Street : InLocality
 #if NETSTANDARD2_0
 		set;
 #else
-			init;
+		init;
+#endif
+	}
+	
+	public TPostalCode PostalCode
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+		init;
 #endif
 	}
 	
@@ -38,17 +48,29 @@ public class Street : InLocality
 #if NETSTANDARD2_0
 		set;
 #else
-			init;
+		init;
 #endif
 	}
 
-	public StreetName StreetName
+	public PlaceName StreetName
 	{
 		get;
 #if NETSTANDARD2_0
 		set;
 #else
-			init;
+		init;
 #endif
 	}
+	
+	public static implicit operator Street<TPostalCode>( StreetAddress<TPostalCode> streetAddress ) => new ()
+	{
+		StreetName = streetAddress.StreetName,
+		Locality = streetAddress.Locality,
+		PostalCode = streetAddress.PostalCode,
+		Municipality = streetAddress.Municipality,
+		Territory = streetAddress.Territory,
+		Country = streetAddress.Country
+	};
 }
+
+public record Street : Street<string>, InLocality {}

@@ -1,6 +1,6 @@
 namespace Pug.Models;
 
-public interface InLocality : InMunicipality
+public interface InLocality<TPostalCode> : InMunicipality<TPostalCode>
 {
 	string Locality
 	{
@@ -12,3 +12,5 @@ public interface InLocality : InMunicipality
 #endif
 	}
 }
+
+public interface InLocality : InLocality<string>, InMunicipality {}

@@ -26,7 +26,7 @@ public record Territory : INamed, InCountry
 #endif
 	}
 
-	public static implicit operator Territory( Municipality municipality ) => new Territory()
+	public static implicit operator Territory( MunicipalityBase municipality ) => new Territory()
 	{
 		Name = municipality.Territory,
 		Country = municipality.Country
