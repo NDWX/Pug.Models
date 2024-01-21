@@ -1,5 +1,3 @@
-using Pug.Effable;
-
 namespace Pug.Models;
 
 public abstract record MunicipalityBase : InTerritoryBase

@@ -1,6 +1,5 @@
 ﻿
 using Pug.Effable;
-using static System.String;
 
 namespace Pug.Models;
 
