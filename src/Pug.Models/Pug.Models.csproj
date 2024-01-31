@@ -17,7 +17,7 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/NDWX/Pug.Models</RepositoryUrl>
         <PackageReleaseNotes>
-            Upgraded to Pug.Effable v3.0.1.
+            Upgraded Pug.Effable to v3.0.3 and added implicit operators where applicable.
         </PackageReleaseNotes>
     </PropertyGroup>
     
