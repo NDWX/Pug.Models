@@ -1,6 +1,5 @@
 ﻿
 using Pug.Effable;
-using static System.String;
 
 namespace Pug.Models;
 
@@ -30,5 +29,23 @@ public record Territory : INamed, InCountry
 	{
 		Name = municipality.Territory,
 		Country = municipality.Country
+	};
+	
+	public static implicit operator Territory( Street street ) => new ()
+	{
+		Name = street.Locality,
+		Country = street.Country
+	};
+	
+	public static implicit operator Territory( StreetAddress streetAddress ) => new ()
+	{
+		Name = streetAddress.Locality,
+		Country = streetAddress.Country
+	};
+	
+	public static implicit operator Territory( Dwelling dwelling ) => new ()
+	{
+		Name = dwelling.Locality,
+		Country = dwelling.Country
 	};
 }

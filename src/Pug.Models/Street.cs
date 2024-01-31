@@ -71,6 +71,16 @@ public record Street<TPostalCode> : InLocality<TPostalCode>
 		Territory = streetAddress.Territory,
 		Country = streetAddress.Country
 	};
+	
+	public static implicit operator Street<TPostalCode>( Dwelling<TPostalCode> dwe ) => new ()
+	{
+		StreetName = dwe.StreetName,
+		Locality = dwe.Locality,
+		PostalCode = dwe.PostalCode,
+		Municipality = dwe.Municipality,
+		Territory = dwe.Territory,
+		Country = dwe.Country
+	};
 }
 
 public record Street : Street<string>, InLocality {}
