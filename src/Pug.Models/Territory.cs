@@ -3,7 +3,7 @@ using Pug.Effable;
 
 namespace Pug.Models;
 
-public record Territory : INamed, InCountry
+public record Territory : InCountryBase, INamed
 {
 	public string Name
 	{
@@ -14,18 +14,8 @@ public record Territory : INamed, InCountry
 			init;
 #endif
 	}
-		
-	public string Country
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-			init;
-#endif
-	}
 
-	public static implicit operator Territory( MunicipalityBase municipality ) => new Territory()
+	public static implicit operator Territory( Municipality municipality ) => new Territory()
 	{
 		Name = municipality.Territory,
 		Country = municipality.Country
@@ -42,7 +32,7 @@ public record Territory : INamed, InCountry
 		Name = streetAddress.Locality,
 		Country = streetAddress.Country
 	};
-	
+
 	public static implicit operator Territory( Dwelling dwelling ) => new ()
 	{
 		Name = dwelling.Locality,

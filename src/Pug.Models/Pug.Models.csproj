@@ -21,12 +21,12 @@
         </PackageReleaseNotes>
     </PropertyGroup>
     
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
-<!--        <Nullable>enable</Nullable>-->
-    </PropertyGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="Pug.Effable" Version="3.0.3" />
+    </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Pug.Effable" Version="3.0.3" />
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+      <PackageReference Include="Pug.Effable" Version="2.0.5" />
     </ItemGroup>
 
 </Project>

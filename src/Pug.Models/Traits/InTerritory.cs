@@ -1,6 +1,6 @@
 namespace Pug.Models;
 
-public interface InTerritoryBase : InCountry
+public interface InTerritory<TPostalCode> : InCountry, IPostalCodeAssignable<TPostalCode>, IsIn<Territory>
 {
 	string Territory
 	{
@@ -11,10 +11,6 @@ public interface InTerritoryBase : InCountry
 			init;
 #endif
 	}
-}
-
-public interface InTerritory<TPostalCode> : InTerritoryBase, IPostalCodeAssignable<TPostalCode>
-{
 }
 
 public interface InTerritory : InTerritory<string>, IPostalCodeAssignable {}

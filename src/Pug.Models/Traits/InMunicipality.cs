@@ -1,6 +1,6 @@
 namespace Pug.Models;
 
-public interface InMunicipality<TPostalCode> : InTerritory<TPostalCode>
+public interface InMunicipality<TPostalCode> : InTerritory<TPostalCode>, IsIn<Municipality<TPostalCode>>
 {
 	string Municipality
 	{

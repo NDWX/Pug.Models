@@ -1,6 +1,6 @@
 namespace Pug.Models;
 
-public interface InCountry
+public interface InCountry : IsIn<string>
 {
 	string Country
 	{
