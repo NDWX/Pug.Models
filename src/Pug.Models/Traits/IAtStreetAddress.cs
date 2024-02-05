@@ -1,6 +1,6 @@
 ﻿namespace Pug.Models;
 
-public interface IAtStreetAddress<TPostalCode> : IOnStreet<TPostalCode>
+public interface IAtStreetAddress<TPostalCode> : IOnStreet<TPostalCode>, IsIn<StreetAddress<TPostalCode>>
 {
 	string StreetNumber
 	{
@@ -12,7 +12,7 @@ public interface IAtStreetAddress<TPostalCode> : IOnStreet<TPostalCode>
 #endif
 	}
 	
-	public PlaceName Place
+	PlaceName Place
 	{
 		get;
 #if NETSTANDARD2_0

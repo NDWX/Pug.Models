@@ -1,57 +1,7 @@
 ﻿namespace Pug.Models;
 
-public record Street<TPostalCode> : InLocality<TPostalCode>
+public record Street<TPostalCode> : InLocalityBase<TPostalCode>
 {
-	public string Country 
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-		init;
-#endif
-	}
-	
-	public string Territory
-	{
-		get;
-#if NETSTANDARD2_0
-		set; 
-#else
-		init;
-#endif
-	}
-	
-	public string Municipality
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-		init;
-#endif
-	}
-	
-	public TPostalCode PostalCode
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-		init;
-#endif
-	}
-	
-	public string Locality
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-		init;
-#endif
-	}
-
 	public PlaceName StreetName
 	{
 		get;

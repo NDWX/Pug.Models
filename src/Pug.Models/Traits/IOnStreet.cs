@@ -1,6 +1,6 @@
 ﻿namespace Pug.Models;
 
-public interface IOnStreet<TPostalCode> : InLocality<TPostalCode>
+public interface IOnStreet<TPostalCode> : InLocality<TPostalCode>, IsIn<Street<TPostalCode>>
 {
 	PlaceName StreetName
 	{
