@@ -8,16 +8,16 @@
         <Authors>Andrian</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageTags>Pug Models Types Library</PackageTags>
-        <Version>0.0.7</Version>
-        <FileVersion>0.0.7</FileVersion>
-        <AssemblyVersion>0.0.7</AssemblyVersion>
-        <PackageVersion>0.0.7</PackageVersion>
+        <Version>0.0.8</Version>
+        <FileVersion>0.0.8</FileVersion>
+        <AssemblyVersion>0.0.8</AssemblyVersion>
+        <PackageVersion>0.0.8</PackageVersion>
         <PackageLicenseExpression>APL-1.0</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/NDWX/Pug.Models</RepositoryUrl>
         <PackageReleaseNotes>
-            Upgraded Pug.Effable to v3.0.3 and added implicit operators where applicable.
+            Pug.Effable backwards compatibility support for .NET Standard and location models parent location equality check implementation.
         </PackageReleaseNotes>
     </PropertyGroup>
     
