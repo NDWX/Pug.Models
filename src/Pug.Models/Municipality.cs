@@ -12,37 +12,22 @@ public record Municipality<TPostalCode> : InTerritoryBase<TPostalCode>
 #endif
 	}
 	
-	public static implicit operator Municipality<TPostalCode>( Locality<TPostalCode> locality ) => new ()
+	public static implicit operator Municipality<TPostalCode>( InMunicipalityBase<TPostalCode> inMunicipality ) => new ()
 	{
-		PostalCode = locality.PostalCode,
-		Name = locality.Municipality,
-		Territory = locality.Territory,
-		Country = locality.Country
-	};
-	
-	public static implicit operator Municipality<TPostalCode>( Street<TPostalCode> street ) => new ()
-	{
-		PostalCode = street.PostalCode,
-		Name = street.Municipality,
-		Territory = street.Territory,
-		Country = street.Country
-	};
-	
-	public static implicit operator Municipality<TPostalCode>( StreetAddress<TPostalCode> streetAddress ) => new ()
-	{
-		PostalCode = streetAddress.PostalCode,
-		Name = streetAddress.Municipality,
-		Territory = streetAddress.Territory,
-		Country = streetAddress.Country
-	};
-	
-	public static implicit operator Municipality<TPostalCode>( Dwelling<TPostalCode> dwelling ) => new ()
-	{
-		PostalCode = dwelling.PostalCode,
-		Name = dwelling.Municipality,
-		Territory = dwelling.Territory,
-		Country = dwelling.Country
+		PostalCode = inMunicipality.PostalCode,
+		Name = inMunicipality.Municipality,
+		Territory = inMunicipality.Territory,
+		Country = inMunicipality.Country
 	};
 }
 
-public record Municipality : Municipality<string>, InTerritory {}
+public record Municipality : Municipality<string>, InTerritory
+{
+	public static implicit operator Municipality( InMunicipalityBase<string> inMunicipality ) => new ()
+	{
+		PostalCode = inMunicipality.PostalCode,
+		Name = inMunicipality.Municipality,
+		Territory = inMunicipality.Territory,
+		Country = inMunicipality.Country
+	};
+}

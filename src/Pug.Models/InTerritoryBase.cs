@@ -1,16 +1,6 @@
 namespace Pug.Models;
 
-public abstract record InTerritoryBase<TPostalCode> : InCountryBase, InTerritory<TPostalCode>
-{
-	public TPostalCode PostalCode
-	{
-		get;
-#if NETSTANDARD2_0
-		set;
-#else
-		init;
-#endif
-	}
+public abstract record InTerritoryBase : InCountryBase {
 
 	public bool IsIn( Territory location )
 	{
@@ -27,6 +17,20 @@ public abstract record InTerritoryBase<TPostalCode> : InCountryBase, InTerritory
 		set;
 #else
 			init;
+#endif
+	}
+	
+}
+
+public abstract record InTerritoryBase<TPostalCode> : InTerritoryBase, InTerritory<TPostalCode>
+{
+	public TPostalCode PostalCode
+	{
+		get;
+#if NETSTANDARD2_0
+		set;
+#else
+		init;
 #endif
 	}
 }
