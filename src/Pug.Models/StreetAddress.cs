@@ -22,7 +22,7 @@ public record StreetAddress<TPostalCode> : OnStreetBase<TPostalCode>
 #endif
 	}
 	
-	public static implicit operator StreetAddress<TPostalCode>( Dwelling<TPostalCode> dwelling ) => new ()
+	public static implicit operator StreetAddress<TPostalCode>( AtStreetAddressBase<TPostalCode> dwelling ) => new ()
 	{
 		Place = dwelling.Place,
 		StreetNumber = dwelling.StreetNumber,
@@ -37,4 +37,15 @@ public record StreetAddress<TPostalCode> : OnStreetBase<TPostalCode>
 
 public record StreetAddress : StreetAddress<string>, IOnStreet
 {
+	public static implicit operator StreetAddress( AtStreetAddressBase<string> dwelling ) => new ()
+	{
+		Place = dwelling.Place,
+		StreetNumber = dwelling.StreetNumber,
+		StreetName = dwelling.StreetName,
+		Locality = dwelling.Locality,
+		PostalCode = dwelling.PostalCode,
+		Municipality = dwelling.Municipality,
+		Territory = dwelling.Territory,
+		Country = dwelling.Country
+	};
 }

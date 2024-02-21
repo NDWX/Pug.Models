@@ -13,6 +13,6 @@ public interface InLocality<TPostalCode> : InMunicipality<TPostalCode>, IsIn<Loc
 	}
 }
 
-public interface InLocality : InLocality<string>
+public interface InLocality : InLocality<string>, InMunicipality
 {
 }
